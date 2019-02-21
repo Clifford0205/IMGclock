@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #000;
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+
+    <script>
+
+
+        window.onload=function(){
+            function toDou(n){
+                if(n<10){
+                    return '0'+n;
+                }else{
+                    return ''+n;
+                }
+            };
+
+
+            
+
+            var aImg=document.getElementsByTagName('img');
+
+            // alert(aImg.length);
+            // var timenum ='135432';
+            function tick(){
+            var oDate=new Date();
+
+            var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+
+
+            // alert(str);
+
+            for(var i=0;i<aImg.length;i++){
+                aImg[i].src='img/'+str[i]+'.png';
+            }
+            }
+            setInterval(tick,1000);
+
+            tick(); //螢幕載入後就執行
+        }
+    </script>
+</head>
+<body>
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+</body>
+</html>
